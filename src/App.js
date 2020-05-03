@@ -21,6 +21,9 @@ import Person from './Person/Person';
 //      否則會出現以下的錯誤
 //      React Hook "useState" is called in function "app" which is neither a React function component 
 //      or a custom React Hook function
+// 注意：class based component的 setState方法 會使用merge的方式合併新舊值
+//      而function based component的 useState是用replace的方式直接換掉舊狀態
+//      如果要使用useState的方式維持狀態可以使用多個 useState回傳的狀態來處理
 const App = props => {
 
   // useState 會回傳一個陣列
@@ -31,11 +34,12 @@ const App = props => {
       {name: 'Max', age: 28},
       {name: 'Manu', age: 29},
       {name: 'Stephanie', age: 26}
-    ],
-    otherState: 'some other value'
+    ]
   });
 
-  console.log(personsState);
+  const [otherState, setOtherState] = useState('some other value');
+
+  console.log(personsState, otherState);
 
   // Switch Name 按鈕 click 事件處理函式
   const switchNameHandler = () => {
