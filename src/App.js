@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
 
+// React 支援的Event 列表
+// https://reactjs.org/docs/events.html#supported-events
+
 class App extends Component{
 
   state = {
