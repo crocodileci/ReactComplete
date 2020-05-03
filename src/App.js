@@ -9,6 +9,7 @@ import Person from './Person/Person';
 // 在React 版本 > 16.8可以在function based compoent中使用useState() 來控制state
 // 將Class base的Compnoent轉換成 function Based的Component的步驟
 // 1. 將原本class中的state與 function 移出原本的class外
+// 2. 將Class 寫法先改寫為箭頭函式，return的值為原有class based中的 render function的 return值
 const app = props => {
   
   // 如果使用以下JSX語法須引入React
