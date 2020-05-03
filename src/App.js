@@ -13,12 +13,24 @@ class App extends Component{
       {name: 'Max', age: 28},
       {name: 'Manu', age: 29},
       {name: 'Stephanie', age: 26}
-    ]
+    ],
+    otherState: 'some other value'
   }
 
   // Switch Name 按鈕 click 事件處理函式
   switchNameHandler = () => {
     console.log('Was Clicked!');
+    // DON'T DO THIS: this.state.persons[0].name = 'Maximilian';
+    // 更新state 需要使用 setState的function 
+    // 該函式會將傳入的新狀態合併至當前的state中
+    // 並通知相關的componet並更新UI
+    this.setState({
+      persons : [
+        {name: 'Maximilian', age: 28},
+        {name: 'Manu', age: 29},
+        {name: 'Stephanie', age: 27}
+      ]
+    });
   }
   
   // 如果使用以下JSX語法須引入React
